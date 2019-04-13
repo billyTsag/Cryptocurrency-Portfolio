@@ -214,3 +214,4 @@ C:\Users\billy\Source\Repos\billyTsag\Cryptocurrency-Portfolio\CryptoFolio\Crypt
 C:\Users\billy\Source\Repos\billyTsag\Cryptocurrency-Portfolio\CryptoFolio\CryptoFolio\obj\Debug\CryptoFolio.csproj.CopyComplete
 C:\Users\billy\Source\Repos\billyTsag\Cryptocurrency-Portfolio\CryptoFolio\CryptoFolio\obj\Debug\CryptoFolio.dll
 C:\Users\billy\Source\Repos\billyTsag\Cryptocurrency-Portfolio\CryptoFolio\CryptoFolio\obj\Debug\CryptoFolio.pdb
+C:\Users\billy\Source\Repos\billyTsag\Cryptocurrency-Portfolio\CryptoFolio\CryptoFolio\obj\Debug\CryptoFolio.Migrations.morecoins.resources

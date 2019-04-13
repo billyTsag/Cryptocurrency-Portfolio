@@ -183,6 +183,10 @@
     <Compile Include="Migrations\201904131259186_firstChanges.Designer.cs">
       <DependentUpon>201904131259186_firstChanges.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904132231518_more coins.cs" />
+    <Compile Include="Migrations\201904132231518_more coins.Designer.cs">
+      <DependentUpon>201904132231518_more coins.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -305,6 +309,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904131259186_firstChanges.resx">
       <DependentUpon>201904131259186_firstChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904132231518_more coins.resx">
+      <DependentUpon>201904132231518_more coins.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
