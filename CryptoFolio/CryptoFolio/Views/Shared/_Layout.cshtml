@@ -16,12 +16,12 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                @Html.ActionLink("Home", "Index", "Home", new { @class = "nav-item nav-link active" })                
-                @Html.ActionLink("Create Your Portfolio", "CreatePortfolio", "Home", new { @class = "nav-item nav-link active" })
-                @Html.ActionLink("Create A Transaction", "CreateTransaction", "Home", new { @class = "nav-item nav-link active" })
-                @*@Html.Partial("_LoginPartial")*@
+                @Html.ActionLink("Home", "Index", "Home", new { @class = "nav-item nav-link" })
+                @Html.ActionLink("Create Your Portfolio", "CreatePortfolio", "Home", new { @class = "nav-item nav-link" })
+                @Html.ActionLink("Create A Transaction", "CreateTransaction", "Home", new { @class = "nav-item nav-link" })
             </div>
         </div>
+        @Html.Partial("_LoginPartial")
     </nav>
 
     <div class="container-fluid body-content">
