@@ -1,0 +1,14 @@
+﻿@model IEnumerable<CryptoFolio.Models.Coin>
+@{
+    ViewBag.Title = "Cryptofolio";
+}
+
+
+<div class="jumbotron bg-dark text-white">
+    @foreach (var item in Model)
+    {
+        <p> @item.Name | @item.Symbol | @item.Price | @item.Supply </p>
+    }
+</div>
+
+
