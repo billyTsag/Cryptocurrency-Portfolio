@@ -7,16 +7,12 @@
 
 @using (Html.BeginForm("CreateTransaction", "Home"))
 {
-    //@Html.LabelFor(x => x.CoinID, "Coin")
-    // @Html.DropDownListFor(x => x.CoinID, new SelectList(Model.Coins, "Name", "Name"), "All")
+    @Html.LabelFor(x => x.CoinID, "Coin")
+    @Html.DropDownListFor(x => x.CoinID, new SelectList(Model.Coins, "CoinID", "Name"), "")
     @Html.LabelFor(x => x.Quantity, "Quantity")
     @Html.TextBoxFor(x => x.Quantity, new { placeholder = "Quantity" })
     @Html.LabelFor(x => x.DatePurchased, "Date Purchased")
-    @Html.TextBoxFor(x => x.DatePurchased, new { placeholder = "Date Purhcased" })
-    
-        @Html.LabelFor(m => m.CoinID)
-        @Html.DropDownListFor(m => m.CoinID, new SelectList(Model.Coins))
-    
+    @Html.TextBoxFor(x => x.DatePurchased, new { placeholder = "Date Purhcased" })  
 
 
     <button type="submit">Create</button>

@@ -46,7 +46,7 @@ namespace CryptoFolio.Controllers
             {
                 Coins = _context.Coins.ToList()
             };
-            return View();
+            return View(ViewModel);
         }
 
         [HttpPost]

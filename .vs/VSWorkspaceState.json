@@ -1,6 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\CryptoFolio",
+    "\\CryptoFolio\\CryptoFolio",
+    "\\CryptoFolio\\CryptoFolio\\Views",
+    "\\CryptoFolio\\CryptoFolio\\Views\\Home"
   ],
+  "SelectedNode": "\\CryptoFolio\\CryptoFolio\\Views\\Home\\Index.cshtml",
   "PreviewInSolutionExplorer": false
 }
