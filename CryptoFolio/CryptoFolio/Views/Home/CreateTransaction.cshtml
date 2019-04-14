@@ -18,11 +18,12 @@
     </div>
     <div class="form-group">
         @Html.LabelFor(x => x.DatePurchased, "Date Purchased")
-        @Html.TextBoxFor(x => x.DatePurchased, new { placeholder = "Date Purhcased" })
+        @Html.TextBoxFor(x => x.DatePurchased, new { type = "date", placeholder = "Date Purhcased" })
+        @* checking branches *@
     </div>
 
 
-        <button type="submit" class="btn btn-outline-success">Create</button>
+    <button type="submit" class="btn btn-outline-success">Create</button>
 
-        }
+}
 

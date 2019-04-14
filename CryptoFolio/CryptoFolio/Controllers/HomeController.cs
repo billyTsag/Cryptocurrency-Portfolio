@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace CryptoFolio.Controllers
 {
-    
+
     public class HomeController : Controller
     {
         private readonly ApplicationDbContext _context = new ApplicationDbContext();
@@ -19,12 +19,14 @@ namespace CryptoFolio.Controllers
             return View(coins);
         }
 
+        [Authorize]
         [HttpGet]
         public ActionResult CreatePortfolio()
         {
             return View();
         }
 
+        [Authorize]
         [HttpPost]
         public ActionResult CreatePortfolio(Portfolio portfolio)
         {
@@ -39,6 +41,7 @@ namespace CryptoFolio.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        [Authorize]
         [HttpGet]
         public ActionResult CreateTransaction()
         {
@@ -49,6 +52,7 @@ namespace CryptoFolio.Controllers
             return View(ViewModel);
         }
 
+        [Authorize]
         [HttpPost]
         public ActionResult CreateTransaction(TransactionViewModel transactionViewModel)
         {
@@ -61,21 +65,18 @@ namespace CryptoFolio.Controllers
             _context.Transactions.Add(tr);
 
             var userId = User.Identity.GetUserId();
-            var portId = _context.Portfolios.FirstOrDefault(x => x.UserID == userId);
-            //var portcoinId = _context.PortfolioCoins.FirstOrDefault(x => x.PortfolioID == portId.PortfolioID);
+            var portId = _context.Portfolios.FirstOrDefault(x => x.UserID == userId);            
 
             var prtc = new PortfolioCoin()
             {
                 TransactionID = tr.TransactionID,
                 PortfolioID = portId.PortfolioID,
                 CoinID = transactionViewModel.CoinID
-               
+
             };
             _context.PortfolioCoins.Add(prtc);
             _context.SaveChanges();
-            return RedirectToAction("Index","Home");
+            return RedirectToAction("Index", "Home");
         }
-
-
     }
 }

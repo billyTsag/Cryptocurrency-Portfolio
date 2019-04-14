@@ -23,12 +23,14 @@
                 <td>@item.Symbol</td>
                 <td>$@item.Price</td>
                 <td>@item.Supply @item.Symbol</td>
-                <td>$@(item.Supply  * item.Price)</td>
+                <td>$@(item.Supply * item.Price)</td>
                 <td><button class="btn btn-outline-warning">@Html.ActionLink("Add Transaction", "CreateTransaction", "Home")</button></td>
             </tr>
         }
     </tbody>
 </table>
-  
+
+
+
 
 
