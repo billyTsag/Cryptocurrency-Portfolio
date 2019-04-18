@@ -16,7 +16,6 @@ namespace CryptoFolio.Models
         public string Name { get; set; }
 
         public DateTime DateCreated { get; set; }
-        //datetime.now
 
     }
 }

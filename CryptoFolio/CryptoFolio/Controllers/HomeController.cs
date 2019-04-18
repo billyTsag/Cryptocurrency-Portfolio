@@ -78,5 +78,13 @@ namespace CryptoFolio.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index", "Home");
         }
+
+        [Authorize]
+        [HttpGet]
+        public ActionResult ViewAllPortfolios()
+        {
+            var portfolios = _context.Portfolios.ToList();
+            return View(portfolios);
+        }
     }
 }
