@@ -3,9 +3,11 @@
     "",
     "\\CryptoFolio",
     "\\CryptoFolio\\CryptoFolio",
+    "\\CryptoFolio\\CryptoFolio\\Controllers",
+    "\\CryptoFolio\\CryptoFolio\\ViewModels",
     "\\CryptoFolio\\CryptoFolio\\Views",
     "\\CryptoFolio\\CryptoFolio\\Views\\Home"
   ],
-  "SelectedNode": "\\CryptoFolio\\CryptoFolio\\Views\\Home\\CreateTransaction.cshtml",
+  "SelectedNode": "\\CryptoFolio\\CryptoFolio\\Controllers",
   "PreviewInSolutionExplorer": false
 }
