@@ -19,27 +19,7 @@ namespace CryptoFolio.Controllers
             return View(coins);
         }
 
-        [Authorize]
-        [HttpGet]
-        public ActionResult CreatePortfolio()
-        {
-            return View();
-        }
-
-        [Authorize]
-        [HttpPost]
-        public ActionResult CreatePortfolio(Portfolio portfolio)
-        {
-            var port = new Portfolio()
-            {
-                UserID = User.Identity.GetUserId(),
-                DateCreated = DateTime.Now,
-                Name = portfolio.Name
-            };
-            _context.Portfolios.Add(port);
-            _context.SaveChanges();
-            return RedirectToAction("Index", "Home");
-        }
+        
 
         [Authorize]
         [HttpGet]
@@ -79,12 +59,6 @@ namespace CryptoFolio.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        [Authorize]
-        [HttpGet]
-        public ActionResult ViewAllPortfolios()
-        {
-            var portfolios = _context.Portfolios.ToList();
-            return View(portfolios);
-        }
+        
     }
 }
