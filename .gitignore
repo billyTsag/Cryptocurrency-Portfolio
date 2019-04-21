@@ -1,3 +1,4 @@
 .vs/
-**/[Pp]ackages/*
+packages/
+bin/
 .DS_Store
