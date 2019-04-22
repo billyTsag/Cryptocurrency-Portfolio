@@ -1,0 +1,14 @@
+﻿@model CryptoFolio.Models.Portfolio
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create Portfolio</h2>
+<hr />
+@using (Html.BeginForm("CreatePortfolio", "Portfolio"))
+{
+<div class="form-group">
+    @Html.LabelFor(x => x.Name, "Name")
+    @Html.TextBoxFor(x => x.Name, new { placeholder = "Name of your Portfolio" })
+</div>
+<td><button class="btn btn-outline-warning">@Html.ActionLink("Add Portfolio", "CreatePortfolio", "Portfolio", null, new { })</button></td>}

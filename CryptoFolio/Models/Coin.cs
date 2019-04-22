@@ -12,5 +12,6 @@ namespace CryptoFolio.Models
         public string Symbol { get; set; }
         public decimal Price { get; set; }
         public decimal Supply { get; set; }
+        public bool Watch { get; set; }
     }
 }

@@ -21,43 +21,7 @@ namespace CryptoFolio.Controllers
 
         
 
-        [Authorize]
-        [HttpGet]
-        public ActionResult CreateTransaction()
-        {
-            var ViewModel = new TransactionViewModel
-            {
-                Coins = _context.Coins.ToList()
-            };
-            return View(ViewModel);
-        }
-
-        [Authorize]
-        [HttpPost]
-        public ActionResult CreateTransaction(TransactionViewModel transactionViewModel)
-        {
-            var tr = new Transaction()
-            {
-                Quantity = transactionViewModel.Quantity,
-                DateOfPurchase = transactionViewModel.DatePurchased
-            };
-
-            _context.Transactions.Add(tr);
-
-            var userId = User.Identity.GetUserId();
-            var portId = _context.Portfolios.FirstOrDefault(x => x.UserID == userId);            
-
-            var prtc = new PortfolioCoin()
-            {
-                TransactionID = tr.TransactionID,
-                PortfolioID = portId.PortfolioID,
-                CoinID = transactionViewModel.CoinID
-
-            };
-            _context.PortfolioCoins.Add(prtc);
-            _context.SaveChanges();
-            return RedirectToAction("Index", "Home");
-        }
+       
 
         
     }

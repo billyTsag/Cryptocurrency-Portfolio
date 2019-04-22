@@ -16,15 +16,19 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                @Html.ActionLink("Home", "Index", "Home", new { @class = "nav-item nav-link" },null)
-                @Html.ActionLink("Create Your Portfolio", "CreatePortfolio", "Home", new { @class = "nav-item nav-link" },null)
-                @Html.ActionLink("Create A Transaction", "CreateTransaction", "Home", new { @class = "nav-item nav-link" },null)
+                @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-item nav-link" })
+                @Html.ActionLink("Create Your Portfolio", "CreatePortfolio", "Portfolio", null, new { @class = "nav-item nav-link" })
+                @Html.ActionLink("Create A Transaction", "CreateBuyTransaction", "Transaction", null, new { @class = "nav-item nav-link" })
+                @Html.ActionLink("Market", "ViewMarket", "Market", null, new { @class = "nav-item nav-link" })
+                @Html.ActionLink("My Portfolios", "ViewMyPortfolios", "Portfolio", null, new { @class = "nav-item nav-link" })
+                @Html.ActionLink("My Transactions", "ViewMyTransactions", "Transaction", null, new { @class = "nav-item nav-link" })
+
             </div>
         </div>
         @Html.Partial("_LoginPartial")
     </nav>
 
-    <div id ="vw85" class="container-fluid"> 
+    <div class="container-fluid">
         <div class="jumbotron bg-dark text-white">
             @RenderBody()
             <hr />

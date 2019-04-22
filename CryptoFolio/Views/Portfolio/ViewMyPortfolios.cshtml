@@ -1,0 +1,28 @@
+﻿@model IEnumerable<CryptoFolio.Models.Portfolio>
+@{
+    ViewBag.Title = "Home";
+}
+
+<table class="table table-striped table-hover table-dark">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Date Created</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.PortfolioID</th>
+                <td>@item.Name</td>
+                <td>@item.DateCreated</td>
+                <td><button>View Transactions</button></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<button>@Html.ActionLink("Create New Portfolio", "CreatePortfolio", "Portfolio", null, new { @class = "nav-item nav-link" })</button>
+
