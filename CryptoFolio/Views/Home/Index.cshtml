@@ -17,15 +17,16 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <th scope="row">@item.CoinID</th>
-                <td>@item.Name</td>
-                <td>@item.Symbol</td>
-                <td>$@item.Price</td>
-                <td>@item.Supply @item.Symbol</td>
-                <td>$@(item.Supply * item.Price)</td>
-                <td><button class="btn btn-outline-warning">@Html.ActionLink("Add Transaction", "CreateTransaction", "Home",null)</button></td>
-            </tr>
+        <tr>
+            <th scope="row">@item.CoinID</th>
+            <td>@item.Name</td>
+            <td>@item.Symbol</td>
+            <td>$@item.Price</td>
+            <td>@item.Supply @item.Symbol</td>
+            <td>$@(item.Supply * item.Price)</td>
+            <td><button class="btn btn-outline-warning">@Html.ActionLink("Add Transaction", "CreateBuyTransaction", "Transaction",null, new { })</button></td>
+
+        </tr>
         }
     </tbody>
 </table>

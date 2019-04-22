@@ -12,5 +12,9 @@ namespace CryptoFolio.Models
         public decimal Quantity { get; set; }
 
         public DateTime DateOfPurchase { get; set; }
+
+        public bool Buy { get; set; }
+
+        public bool Watch { get; set; }
     }
 }

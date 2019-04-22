@@ -18,6 +18,12 @@ namespace CryptoFolio.ViewModels
 
         public int PortfolioID { get; set; }
 
+        public IEnumerable<Portfolio> Portfolios { get; set; }
+
         public int TransactionID { get; set; }
+
+        public bool Buy { get; set; }
+
+        public bool Watch { get; set; }
     }
 }
