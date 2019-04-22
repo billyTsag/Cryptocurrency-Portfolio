@@ -6,9 +6,9 @@
 
 <div class="form-group">
     @using (Html.BeginForm("ViewMyTransactions", "Transaction", FormMethod.Get))
-    {    
-    @Html.LabelFor(x => x.SelectedPortfolio, "Portfolio")
-    @Html.DropDownListFor(x => x.SelectedPortfolio, new SelectList(Model.Portfolios, "Name", "Name"), "All", new { @id = "selectedPortfolio"})
+    {
+        @Html.LabelFor(x => x.SelectedPortfolio, "Portfolio")
+        @Html.DropDownListFor(x => x.SelectedPortfolio, new SelectList(Model.Portfolios, "Name", "Name"), "All", new { @id = "selectedPortfolio" })
     }
 </div>
 
@@ -16,10 +16,8 @@
     <thead>
         <tr>
             <th scope="col">Transaction ID</th>
-            <th scope="col">Portfolio ID</th>
+            <th scope="col">Coin Name</th>            
             <th scope="col">Portfolio Name</th>
-            <th scope="col">Coin ID</th>
-            <th scope="col">Coin Name</th>
             <th scope="col">Quantity</th>
             <th scope="col">Date Purchased</th>
             <th scope="col">Buy/Sell</th>
@@ -29,14 +27,12 @@
         @foreach (var item in Model.Bla)
         {
             <tr>
-                <th scope="row">@item.TransactionID</th>
-                <td>@item.PortfolioID</td>
-                <td>@item.PortfolioName</td>
-                <td>@item.CoinID</td>
+                <th scope="row">@item.TransactionID</th>                
                 <td>@item.CoinName</td>
+                <td>@item.PortfolioName</td>                
                 <td>@item.Quantity</td>
                 <td>@item.DateOfPurchase</td>
-                @if(item.Buy)
+                @if (item.Buy)
                 {
                     <td style="color:green;">Buy </td>
                 }
@@ -44,23 +40,21 @@
                 {
                     <td style="color:red;">Sell</td>
                 }
-
-                @*<td><button class="btn btn-outline-success">@Html.ActionLink("Watch", "CreateWatchCoin", "Market", null, new { })</button></td>
-                    <td><button class="btn btn-outline-warning">@Html.ActionLink("Add Transaction", "ViewMarket", "Market", null, new { })</button></td>*@
-
             </tr>
         }
     </tbody>
 </table>
 
-@section scripts {
-    <script>
-        window.onload = () => {
-            const selectedPortfolio = document.getElementById("selectedPortfolio");
-            selectedPortfolio.onchange = (e) => {
-                e.target.form.submit();
-            }
+<button class="btn btn-warning">@Html.ActionLink("Add Transaction", "CreateBuyTransaction", "Transaction", null, new { })</button>
 
-        }
-    </script>
+
+    @section scripts {
+        <script>
+            window.onload = () => {
+                const selectedPortfolio = document.getElementById("selectedPortfolio");
+                selectedPortfolio.onchange = (e) => {
+                    e.target.form.submit();
+                }
+            }
+        </script>
     }

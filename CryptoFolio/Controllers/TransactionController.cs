@@ -111,18 +111,19 @@ namespace CryptoFolio.Controllers
         {
             var userID = User.Identity.GetUserId();
 
-            var filters = _context.Portfolios.Where(x => String.IsNullOrEmpty(selectedPortfolio) || x.Name == selectedPortfolio);
+            var portfolioFilters = _context.Portfolios
+                .Where(x => String.IsNullOrEmpty(selectedPortfolio) || x.Name == selectedPortfolio);
 
             var coinss = _context.Transactions
                 .Join(_context.PortfolioCoins, t => t.TransactionID, pc => pc.TransactionID, (t, pc) => new { t, pc })
-                .Join(filters, tpc => tpc.pc.PortfolioID, port => port.PortfolioID, (tpc, port) => new { tpc, port })
+                .Join(portfolioFilters, tpc => tpc.pc.PortfolioID, port => port.PortfolioID, (tpc, port) => new { tpc, port })
                 .Where(tpc => tpc.port.UserID == userID)
                 .Select(tpcport => new MyTransactionsViewModel
                 {
                     TransactionID = tpcport.tpc.t.TransactionID,
-                    PortfolioID = tpcport.port.PortfolioID,
+                    //PortfolioID = tpcport.port.PortfolioID,
                     PortfolioName = tpcport.tpc.pc.Portfolio.Name,
-                    CoinID = tpcport.tpc.pc.CoinID,
+                    //CoinID = tpcport.tpc.pc.CoinID,
                     Quantity = tpcport.tpc.t.Quantity,
                     DateOfPurchase = tpcport.tpc.t.DateOfPurchase,
                     Buy = tpcport.tpc.t.Buy,

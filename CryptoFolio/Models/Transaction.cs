@@ -15,6 +15,6 @@ namespace CryptoFolio.Models
 
         public bool Buy { get; set; }
 
-        public bool Watch { get; set; }
+        public bool Watch { get; set; } // den tha to kanoume edw
     }
 }
