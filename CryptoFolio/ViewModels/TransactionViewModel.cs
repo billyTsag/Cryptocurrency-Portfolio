@@ -9,7 +9,6 @@ namespace CryptoFolio.ViewModels
     public class TransactionViewModel
     {
         public int CoinID { get; set; }
-
         public IEnumerable<Coin> Coins { get; set; }
 
         public DateTime DatePurchased { get; set; }
