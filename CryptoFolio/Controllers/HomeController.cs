@@ -13,16 +13,12 @@ namespace CryptoFolio.Controllers
     public class HomeController : Controller
     {
         private readonly ApplicationDbContext _context = new ApplicationDbContext();
+
         public ActionResult Index()
         {
-            var coins = _context.Coins.ToList();
-            return View(coins);
-        }
-
-        
-
-       
-
-        
+            var userId = User.Identity.GetUserId();
+            var myPortfolios = _context.Portfolios.Where(x => x.UserID == userId).ToList();
+            return View(myPortfolios);
+        }               
     }
 }

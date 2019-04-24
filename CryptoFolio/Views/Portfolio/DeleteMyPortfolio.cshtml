@@ -1,0 +1,13 @@
+﻿@model CryptoFolio.Models.Portfolio
+@{
+    ViewBag.Title = "DeleteMyPortfolio";
+}
+
+<h2>Delete My Portfolio</h2>
+
+<h3> Are you sure you want to delete @Model.Name?</h3>
+@using (Html.BeginForm())
+{
+    <button type="submit" class="btn btn-outline-success">Delete</button>
+}
+

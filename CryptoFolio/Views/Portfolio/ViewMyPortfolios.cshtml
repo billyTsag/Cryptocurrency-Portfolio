@@ -14,12 +14,14 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <th scope="row">@item.PortfolioID</th>
-                <td>@item.Name</td>
-                <td>@item.DateCreated</td>
-                <td><button>View Transactions</button></td>
-            </tr>
+        <tr>
+            <th scope="row">@item.PortfolioID</th>
+            <td>@item.Name</td>
+            <td>@item.DateCreated</td>
+            <td><button>View Transactions</button></td>
+            <td><button>@Html.ActionLink("Edit", "EditMyPortfolio", "Portfolio", new { PortfolioID = item.PortfolioID }, new { @class = "nav-item nav-link"})</button></td>
+            <td><button>@Html.ActionLink("Delete", "DeleteMyPortfolio", "Portfolio", new { PortfolioID = item.PortfolioID }, new { @class = "nav-item nav-link"})</button></td>
+        </tr>
         }
     </tbody>
 </table>

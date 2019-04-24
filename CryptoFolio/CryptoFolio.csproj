@@ -319,6 +319,9 @@
     <Content Include="Views\Transaction\CreateSellTransaction.cshtml" />
     <Content Include="Views\Market\ViewWatchList.cshtml" />
     <Content Include="Views\Transaction\ViewMyTransactions.cshtml" />
+    <Content Include="Views\Portfolio\EditMyPortfolio.cshtml" />
+    <Content Include="Views\Portfolio\DeleteMyPortfolio.cshtml" />
+    <Content Include="Views\Portfolio\ViewMyPortfolio.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
