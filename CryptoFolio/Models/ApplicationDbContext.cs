@@ -13,6 +13,8 @@ namespace CryptoFolio.Models
         public virtual DbSet<Portfolio> Portfolios { get; set; }
         public virtual DbSet<PortfolioCoin> PortfolioCoins { get; set; }
         public virtual DbSet<Transaction> Transactions { get; set; }
+        public virtual DbSet<UserCoin> UserCoins { get; set; }
+        
 
 
         public ApplicationDbContext()

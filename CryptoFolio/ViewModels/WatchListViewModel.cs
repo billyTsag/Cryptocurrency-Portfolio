@@ -14,8 +14,9 @@ namespace CryptoFolio.ViewModels
         public string Symbol { get; set; }
         public decimal Price { get; set; }
         public decimal Supply { get; set; }
-        public bool Watch { get; set; }
         public int TransactionID { get; set; }
         public int PortfolioID { get; set; }
+        public IEnumerable<ApplicationUser> Users { get; set; }
+        public string UserID { get; set; }
     }
 }

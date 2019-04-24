@@ -1,12 +1,14 @@
-﻿@model IEnumerable<CryptoFolio.Models.Coin>
+﻿@model List<CryptoFolio.ViewModels.WatchListViewModel>
 @{
-    ViewBag.Title = "Home";
+    ViewBag.Title = "ViewWatchList";
 }
+
+<h2>ViewWatchList</h2>
 
 <table class="table table-striped table-hover table-dark">
     <div>
-        <button class="btn btn-success">@Html.ActionLink("Market", "ViewMarket", "Market", null, new { @style = "color:white;" })</button>
-        <button class="btn btn-outline-danger">@Html.ActionLink("WatchList", "ViewWatchList", "WatchList", null, new { @style = "color:white;" })</button>
+        <button class="btn btn-outline-success">@Html.ActionLink("Market", "ViewMarket", "Market", null, new { @style = "color:white;" })</button>
+        <button class="btn btn-danger">@Html.ActionLink("WatchList", "ViewWatchList", "WatchList", null, new { @style = "color:white;" })</button>
     </div>
     <thead>
         <tr>
@@ -23,12 +25,14 @@
         {
             <tr>
                 <th scope="row">@item.CoinID</th>
+                
+               
                 <td>@item.Name</td>
                 <td>@item.Symbol</td>
                 <td>$@item.Price</td>
                 <td>@item.Supply @item.Symbol</td>
                 <td>$@(item.Supply * item.Price)</td>
-                <td><button class="btn btn-outline-success">@Html.ActionLink("Watch", "AddToWatchList", "WatchList", new { id= item.CoinID}, new { })</button></td>
+                <td><button class="btn btn-outline-success">@Html.ActionLink("UnWatch", "RemoveFromWatchList", "WatchList", new { id = item.CoinID }, new { })</button></td>
                 <td><button class="btn btn-outline-warning">@Html.ActionLink("Add Transaction", "ViewMarket", "Market", null, new { })</button></td>
 
             </tr>
