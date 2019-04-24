@@ -30,7 +30,7 @@
                 <th scope="row">@item.TransactionID</th>                
                 <td>@item.CoinName</td>
                 <td>@item.PortfolioName</td>                
-                <td>@item.Quantity</td>
+                <td>@Math.Abs(item.Quantity)</td>
                 <td>@item.DateOfPurchase</td>
                 @if (item.Buy)
                 {

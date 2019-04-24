@@ -84,7 +84,7 @@ namespace CryptoFolio.Controllers
         {
             var tr = new Transaction()
             {
-                Quantity = transactionViewModel.Quantity,
+                Quantity = -(transactionViewModel.Quantity),
                 DateOfPurchase = transactionViewModel.DatePurchased,
                 Buy = false
             };

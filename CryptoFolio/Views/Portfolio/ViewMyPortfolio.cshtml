@@ -1,52 +1,34 @@
-﻿@model List<CryptoFolio.ViewModels.MyTransactionsViewModel>
+﻿@model IEnumerable<CryptoFolio.ViewModels.MyTransactionsViewModel>
 @{
-    ViewBag.Title = "ViewMyPortfolio";
+    ViewBag.Title = "View My Portfolio";
 }
 
-<h2>View My Portfolio</h2>
+
+
+
 <table class="table table-striped table-hover table-dark">
     <thead>
         <tr>
-            <th scope="col">Coin</th>
-            <th scope="col">Name</th>
-            <th scope="col">Price</th>
+            <th scope="col">Coin Name</th>
             <th scope="col">Quantity</th>
-            <th scope="col">Value (USD)</th>
+            <th scope="col">Coin Price</th>
+            <th scope="col">Current Value</th>
+           
         </tr>
     </thead>
     <tbody>
-        @for (int i = 0; i < Model.Count(); i++)
+        @foreach (var item in Model)
         {
-            for (int j = 0; j < Model.Count(); j++)
-            {
-                if (Model[i].CoinID == Model[j].CoinID && Model[i].TransactionID != Model[j].TransactionID)
-                {
-                    <tr>
-                        <th scope="row">@Model[i].CoinID</th>
-                        <td>@Model[i].CoinName @Model[i].CoinName</td>
-                        <td>@Model[i].CoinPrice</td>
-                        <td>@Model[i].Quantity</td>
-                        <td>@(Model[i].Quantity * Model[i].CoinPrice)</td>
-                    </tr>
-                }
-                else if (Model[i].CoinID != Model[j].CoinID)
-                {
-
-                }
-                else
-                {
-                    <tr>
-                        <th scope="row">@Model[i].CoinID</th>
-                        <td>@Model[i].CoinName</td>
-                        <td>@Model[i].CoinPrice</td>
-                        <td>@Model[i].Quantity</td>
-                        <td>@(Model[i].Quantity * Model[i].CoinPrice)</td>
-                    </tr>
-                }
-            }
+        <tr>
+            <td>@item.CoinName</td>
+            <td>@item.Quantity</td>
+            <td>@item.CoinPrice</td>
+            <td>@(item.CoinPrice * item.Quantity)</td>
+            
+        </tr>
         }
-
     </tbody>
 </table>
+
 
 

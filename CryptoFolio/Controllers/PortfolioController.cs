@@ -108,10 +108,19 @@ namespace CryptoFolio.Controllers
                     Quantity = tpcport.pc.tpc.t.Quantity,
                     CoinName = tpcport.pc.tpc.pc.Coin.Name,
                     CoinPrice = tpcport.c.Price,
-                    TransactionID = tpcport.pc.tpc.t.TransactionID
+                    TransactionID = tpcport.pc.tpc.t.TransactionID,
+                    Buy = tpcport.pc.tpc.t.Buy
                 }).ToList();
            
-            return View(coinss);
+            var result = coinss.GroupBy(x => x.CoinID).Select(i => new MyTransactionsViewModel
+            {
+                CoinID = i.Key,
+                Quantity = i.Sum(j=>j.Quantity),
+                CoinName = i.First().CoinName,
+                CoinPrice = i.First().CoinPrice
+            });
+           
+            return View(result);
         }
     }
 }

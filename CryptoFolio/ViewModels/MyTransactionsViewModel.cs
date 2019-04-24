@@ -18,7 +18,7 @@ namespace CryptoFolio.ViewModels
         public bool Buy { get; set; }
         public IEnumerable<Portfolio> Portfolios { get; set; }
         public decimal CoinPrice { get; set; }
-        //public string SelectedPortfolio { get; set; }
+        public string SelectedPortfolio { get; set; }
 
     }
 }
