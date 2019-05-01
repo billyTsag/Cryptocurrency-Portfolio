@@ -53,6 +53,7 @@ namespace CryptoFolio.Controllers
         }
 
         [Authorize]
+        [HttpGet]
         public ActionResult ViewWatchList()
         {
             var userID = User.Identity.GetUserId();
