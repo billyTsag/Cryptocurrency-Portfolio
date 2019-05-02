@@ -15,6 +15,7 @@
             <th scope="col">Price</th>
             <th scope="col">Market Cap</th>
             <th scope="col">Total Volume</th>
+            <th scope="col">Circulating Supply</th>
             <th scope="col">Price Change %</th>
         </tr>
     </thead>
@@ -46,6 +47,8 @@
                 let coinMarketCapNumber = info[6][1];
                 let coinPriceChangePercentage = info[11][1];
                 let coinImage = info[3][1];
+                let coinCirculatingSupply = info[14][1];
+
                 let tr = createNode('tr');
                 let td1 = createNode('td');
                 let td2 = createNode('td');
@@ -53,13 +56,23 @@
                 let td4 = createNode('td');
                 let td5 = createNode('td');
                 let td6 = createNode('td');
+                let td7 = createNode('td');
 
                 td1.innerHTML = `${coinMarketCapNumber}`;
                 td2.innerHTML = `<img src="${coinImage}" height=25> ${coinName}`;
                 td3.innerHTML = `$${coinPrice}`;
                 td4.innerHTML = `$${coinMarketCap}`;
                 td5.innerHTML = `$${coinTotalVolume}`;
-                td6.innerHTML = `${coinPriceChangePercentage}%`;
+                td6.innerHTML = `${coinCirculatingSupply}`;
+                td7.innerHTML = `${coinPriceChangePercentage}%`;
+
+
+                if (coinPriceChangePercentage > 0) {
+                    td7.style.color = "green";
+                }
+                else {
+                    td7.style.color = "red";
+                }
                 
                 append(tr, td1);
                 append(tr, td2);
@@ -67,6 +80,7 @@
                 append(tr, td4);
                 append(tr, td5);
                 append(tr, td6);
+                append(tr, td7);
                 append(tbody, tr);
             })
         });
