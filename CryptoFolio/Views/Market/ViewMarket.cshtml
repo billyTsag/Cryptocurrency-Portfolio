@@ -12,26 +12,63 @@
         <tr>
             <th scope="col">#</th>
             <th scope="col">Name</th>
-            <th scope="col">Symbol</th>
-            <th scope="col">Price </th>
-            <th scope="col">Circulating Supply</th>
+            <th scope="col">Price</th>
             <th scope="col">Market Cap</th>
+            <th scope="col">Total Volume</th>
+            <th scope="col">Price Change %</th>
         </tr>
     </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <th scope="row">@item.CoinID</th>
-                <td>@item.Name</td>
-                <td>@item.Symbol</td>
-                <td>$@item.Price</td>
-                <td>@item.Supply @item.Symbol</td>
-                <td>$@(item.Supply * item.Price)</td>
-                <td><button class="btn btn-outline-success">@Html.ActionLink("Watch", "AddToWatchList", "WatchList", new { id= item.CoinID}, new { })</button></td>
-                <td><button class="btn btn-outline-warning">@Html.ActionLink("Add Transaction", "ViewMarket", "Market", null, new { })</button></td>
-
-            </tr>
-        }
+    <tbody id="coins">
+             
     </tbody>
 </table>
+
+<script> 
+    function createNode(element) {
+        return document.createElement(element);
+    }
+
+    function append(parent, el) {
+        return parent.appendChild(el);
+    }
+    const tbody = document.getElementById('coins'); 
+    const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&page=1&sparkline=false';
+    fetch(url)
+        .then((response) => response.json())
+        .then(function (data) {
+            const coins = Object.entries(data);
+            return coins.map(function (coin) {
+                let info = Object.entries(coin[1]);                
+                let coinName = info[2][1];
+                let coinPrice = info[4][1];
+                let coinMarketCap = info[5][1];
+                let coinTotalVolume = info[7][1];
+                let coinMarketCapNumber = info[6][1];
+                let coinPriceChangePercentage = info[11][1];
+                let coinImage = info[3][1];
+                let tr = createNode('tr');
+                let td1 = createNode('td');
+                let td2 = createNode('td');
+                let td3 = createNode('td');
+                let td4 = createNode('td');
+                let td5 = createNode('td');
+                let td6 = createNode('td');
+
+                td1.innerHTML = `${coinMarketCapNumber}`;
+                td2.innerHTML = `<img src="${coinImage}" height=25> ${coinName}`;
+                td3.innerHTML = `$${coinPrice}`;
+                td4.innerHTML = `$${coinMarketCap}`;
+                td5.innerHTML = `$${coinTotalVolume}`;
+                td6.innerHTML = `${coinPriceChangePercentage}%`;
+                
+                append(tr, td1);
+                append(tr, td2);
+                append(tr, td3);
+                append(tr, td4);
+                append(tr, td5);
+                append(tr, td6);
+                append(tbody, tr);
+            })
+        });
+
+</script>
