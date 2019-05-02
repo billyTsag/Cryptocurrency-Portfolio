@@ -9,10 +9,10 @@
 <table class="table table-striped table-hover table-dark">
     <thead>
         <tr>
-            <th scope="col">Coin Name</th>
-            <th scope="col">Quantity</th>
-            <th scope="col">Coin Price</th>
-            <th scope="col">Current Value</th>
+            <th>  @Html.ActionLink("Coin Name", "ViewMyPortfolio", new { sortOrder = ViewBag.CoinNameSortParm })</th>
+            <th>  @Html.ActionLink("Quantity", "ViewMyPortfolio", new { sortOrder = ViewBag.QuantitySortParm })</th>
+            <th>  @Html.ActionLink("Coin Price", "ViewMyPortfolio", new { sortOrder = ViewBag.PriceSortParm })</th>
+            <th>  @Html.ActionLink("Current Value", "ViewMyPortfolio", new { sortOrder = ViewBag.ValueSortParm })</th>
            
         </tr>
     </thead>

@@ -7,8 +7,8 @@
     <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Date Created</th>
+            <th>  @Html.ActionLink("Name", "ViewMyPortfolios",  new { sortOrder = ViewBag.NameSortParm })</th>
+            <th>  @Html.ActionLink("Date", "ViewMyPortfolios", new { sortOrder = ViewBag.DateSortParm })</th>
         </tr>
     </thead>
     <tbody>
