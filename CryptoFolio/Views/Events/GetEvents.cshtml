@@ -3,9 +3,10 @@
     ViewBag.Title = "GetEvents";
 }
 
-<h2>Cryptocurrency Events</h2>
+<h2 style="text-align:center;">Cryptocurrency Events</h2>
+<hr style="background-color: white;"/>
 
-<div class="card-deck" id="please-fix" style="display:grid; color:black; grid-template-columns: repeat(3, 1fr);">
+<div class="card-deck" id="please-fix" style="display:grid; color:black; grid-template-columns: repeat(3, 1fr); text-align:center;">
     
 </div>
 
@@ -58,11 +59,12 @@
                     p2.classList.add('card-text');
                     small.classList.add('text-muted');
 
-                    h5.innerHTML = `${eventTitle} - ${eventType}`;
-                    p1.innerHTML = `Description: ${eventDescription}`;
+                    h5.innerHTML = `${eventType} <br> ${eventTitle} <br> ${eventOrganiser} `;
+                    p1.innerHTML = `${eventDescription}`;
                     small.innerHTML = `Start Date: ${eventStartDate} - End Date: ${eventEndDate}`;
 
                     divCard.style.margin = "10px";
+                    divCardBody.style.backgroundColor = "#E8E8E8";
                     img.style.height = "300px";
 
                     append(p2, small);
