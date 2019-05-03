@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "GetEvents";
+}
+
+<h2>GetEvents</h2>
+
+<div class="card-deck" id="please-fix" style="display:grid; color:black; grid-template-columns: repeat(3, 1fr);">
+    
+</div>
+
+<script>
+
+    function createNode(element) {
+        return document.createElement(element);
+    }
+
+    function append(parent, el) {
+        return parent.appendChild(el);
+    }
+
+    const divCardDeck = document.getElementById('please-fix');
+    const url = 'https://api.coingecko.com/api/v3/events';
+
+    fetch(url)
+        .then((response) => response.json())
+        .then(function (data) {
+            const coins = Object.entries(data);
+            return coins.map(function (coin) {
+                let info = Object.entries(coin[1]);
+                info.map(function (inf) {
+                    let moreInfo = Object.entries(inf[1]);
+                    let eventType = moreInfo[0][1];
+                    let eventTitle = moreInfo[1][1];
+                    let eventDescription = moreInfo[2][1];
+                    let eventOrganiser = moreInfo[3][1];
+                    let eventStartDate = moreInfo[4][1];
+                    let eventEndDate = moreInfo[5][1];
+                    let eventScreenshot = moreInfo[12][1];
+
+                    console.log(eventType);
+                    console.log(eventScreenshot);
+
+                    let divCard = createNode('div');
+                    let img = createNode('img');
+                    let divCardBody = createNode('div');
+                    let h5 = createNode('h5');
+                    let p1 = createNode('p');
+                    let p2 = createNode('p');
+                    let small = createNode('small');
+
+                    divCardBody.classList.add('card-body');
+                    divCard.classList.add('card');
+                    img.classList.add('card-img-top');
+                    img.setAttribute("src", `${eventScreenshot}`);
+                    h5.classList.add('card-title');
+                    p1.classList.add('card-text');
+                    p2.classList.add('card-text');
+                    small.classList.add('text-muted');
+
+                    h5.innerHTML = `${eventTitle} - ${eventType}`;
+                    p1.innerHTML = `Description: ${eventDescription}`;
+                    small.innerHTML = `Start Date: ${eventStartDate} - End Date: ${eventEndDate}`;
+
+                    divCard.style.margin = "10px";
+                    img.style.height = "300px";
+
+                    append(p2, small);
+                    append(divCardBody, h5);
+                    append(divCardBody, p1);
+                    append(divCardBody, p2);                    
+                    append(divCard, img);
+                    append(divCard, divCardBody);
+                    append(divCardDeck, divCard);
+
+                })
+            })
+        });
+</script>

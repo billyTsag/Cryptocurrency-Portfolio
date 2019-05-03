@@ -170,6 +170,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MarketController.cs" />
@@ -329,6 +330,7 @@
     <Content Include="Views\Portfolio\DeleteMyPortfolio.cshtml" />
     <Content Include="Views\Portfolio\ViewMyPortfolio.cshtml" />
     <Content Include="Views\WatchList\ViewWatchList.cshtml" />
+    <Content Include="Views\Events\GetEvents.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
