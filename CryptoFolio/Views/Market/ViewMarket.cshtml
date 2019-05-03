@@ -32,6 +32,11 @@
     function append(parent, el) {
         return parent.appendChild(el);
     }
+
+    function formatNumber(num) {
+        return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+    }
+
     const tbody = document.getElementById('coins'); 
     const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&page=1&sparkline=false';
     fetch(url)
@@ -42,12 +47,12 @@
                 let info = Object.entries(coin[1]);                
                 let coinName = info[2][1];
                 let coinPrice = info[4][1];
-                let coinMarketCap = info[5][1];
-                let coinTotalVolume = info[7][1];
+                let coinMarketCap = formatNumber(info[5][1]);
+                let coinTotalVolume = formatNumber(info[7][1]);
                 let coinMarketCapNumber = info[6][1];
                 let coinPriceChangePercentage = info[11][1];
                 let coinImage = info[3][1];
-                let coinCirculatingSupply = info[14][1];
+                let coinCirculatingSupply = formatNumber(info[14][1]);
 
                 let tr = createNode('tr');
                 let td1 = createNode('td');
