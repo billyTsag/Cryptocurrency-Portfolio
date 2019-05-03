@@ -33,10 +33,10 @@ namespace CryptoFolio
                 //Here we create a Admin super user who will maintain the website                  
 
                 var user = new ApplicationUser();
-                user.UserName = "CryptoFolio";
+                user.UserName = "billy_ts@yahoo.com";
                 user.Email = "billy_ts@yahoo.com";
 
-                string userPWD = "A@Z200711";
+                string userPWD = "Aa@Z200711";
 
                 var chkUser = UserManager.Create(user, userPWD);
 
