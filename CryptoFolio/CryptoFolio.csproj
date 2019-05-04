@@ -174,6 +174,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MarketController.cs" />
+    <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\PortfolioController.cs" />
     <Compile Include="Controllers\TransactionController.cs" />
     <Compile Include="Controllers\WatchListController.cs" />
@@ -208,6 +209,10 @@
     <Compile Include="Migrations\201904241153248_UserCoins.Designer.cs">
       <DependentUpon>201904241153248_UserCoins.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905041257200_coinmodel.cs" />
+    <Compile Include="Migrations\201905041257200_coinmodel.Designer.cs">
+      <DependentUpon>201905041257200_coinmodel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -224,6 +229,7 @@
     <Compile Include="ViewModels\MarketViewModel.cs" />
     <Compile Include="ViewModels\MyPortfoliosViewModel.cs" />
     <Compile Include="ViewModels\OposNaNaiViewModel.cs" />
+    <Compile Include="ViewModels\PaymentViewModel.cs" />
     <Compile Include="ViewModels\TransactionViewModel.cs" />
     <Compile Include="ViewModels\WatchListViewModel.cs" />
   </ItemGroup>
@@ -331,6 +337,8 @@
     <Content Include="Views\Portfolio\ViewMyPortfolio.cshtml" />
     <Content Include="Views\WatchList\ViewWatchList.cshtml" />
     <Content Include="Views\Events\GetEvents.cshtml" />
+    <Content Include="Views\Events\ChangeRole.cshtml" />
+    <Content Include="Views\Payment\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -361,6 +369,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904241153248_UserCoins.resx">
       <DependentUpon>201904241153248_UserCoins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905041257200_coinmodel.resx">
+      <DependentUpon>201905041257200_coinmodel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

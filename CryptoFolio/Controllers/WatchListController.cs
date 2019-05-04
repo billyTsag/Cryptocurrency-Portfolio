@@ -63,10 +63,8 @@ namespace CryptoFolio.Controllers
                 .Where(cuc => cuc.uc.UserID == userID)
                 .Select(cuc => new WatchListViewModel
                 {
-                    Name = cuc.c.Name,
-                    Symbol = cuc.c.Symbol,
-                    Supply = cuc.c.Supply,
-                    Price = cuc.c.Price
+                    Name = cuc.c.Name
+                    
                 }).ToList();
                 
 

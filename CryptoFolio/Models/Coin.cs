@@ -9,9 +9,6 @@ namespace CryptoFolio.Models
     {
         public int CoinID { get; set; }
         public string Name { get; set; }
-        public string Symbol { get; set; }
-        public decimal Price { get; set; }
-        public decimal Supply { get; set; }
-        public bool Watch { get; set; }
+        
     }
 }

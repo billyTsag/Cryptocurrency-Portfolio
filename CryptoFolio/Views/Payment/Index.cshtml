@@ -1,0 +1,36 @@
+﻿@model CryptoFolio.ViewModels.PaymentViewModel
+@{
+    ViewBag.Title = "Payment";
+}
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4" style="text-align:center; border:5px solid #8FBC8F; padding:30px; border-radius:20px;">
+        <h2>Payment</h2>
+        <hr style="background-color: white;" />
+
+        
+            <div class="form-group">
+                @Html.LabelFor(x => x.Price, "$10.00")
+                @Html.TextBoxFor(x => x.Price, new { placeholder = "$10.00", @class = "form-control", style = "margin:0 auto;" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.CardNumber, "Date Purchased")
+                @Html.TextBoxFor(x => x.CardNumber, new {  placeholder = "Card No", @class = "form-control", style = "margin:0 auto;" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.Month, "Date Purchased")
+                @Html.TextBoxFor(x => x.Month, new { type = "date", placeholder = "M", @class = "form-control", style = "margin:0 auto;" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.Year, "Date Purchased")
+                @Html.TextBoxFor(x => x.Year, new { type = "date", placeholder = "Y", @class = "form-control", style = "margin:0 auto;" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.Cvc, "CVC")
+                @Html.TextBoxFor(x => x.Cvc, new { placeholder = "Date Purhcased", @class = "form-control", style = "margin:0 auto;" })
+            </div>
+            <button> @Html.ActionLink("Go to Premium","ChangeRole", "Events") </button>
+        
+    </div>
+    <div class="col-4"></div>
+</div>

@@ -169,7 +169,7 @@ namespace CryptoFolio.Controllers
                     CoinID = tpcport.pc.tpc.pc.CoinID,
                     Quantity = tpcport.pc.tpc.t.Quantity,
                     CoinName = tpcport.pc.tpc.pc.Coin.Name,
-                    CoinPrice = tpcport.c.Price,
+                    
                     TransactionID = tpcport.pc.tpc.t.TransactionID,
                     Buy = tpcport.pc.tpc.t.Buy
                 }).ToList();
