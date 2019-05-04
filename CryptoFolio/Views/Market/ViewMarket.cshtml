@@ -44,6 +44,7 @@
         .then(function (data) {
             const coins = Object.entries(data);
             return coins.map(function (coin) {
+
                 let info = Object.entries(coin[1]);                
                 let coinName = info[2][1];
                 let coinPrice = info[4][1];

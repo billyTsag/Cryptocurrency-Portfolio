@@ -20,15 +20,42 @@
         @foreach (var item in Model)
         {
         <tr>
-            <td>@item.CoinName</td>
-            <td>@item.Quantity</td>
-            <td>@item.CoinPrice</td>
-            <td>@(item.CoinPrice * item.Quantity)</td>
+            <td class="coinName">@item.CoinName</td>
+            <td class="coinQuantity">@item.Quantity</td>
+            <td class="coinPrice"></td>
+            <td class="coinValue"></td>
             
         </tr>
         }
     </tbody>
 </table>
+
+<script>
+    let DOMcoinName = document.getElementsByClassName('coinName');
+    let DOMcoinPrice = document.getElementsByClassName('coinPrice');
+    let DOMcoinValue = document.getElementsByClassName('coinValue');
+    let DOMcoinQuantity = document.getElementsByClassName('coinQuantity');
+    
+    const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&page=1&sparkline=false';
+    fetch(url)
+        .then((response) => response.json())
+        .then(function (data) {
+            const coins = Object.entries(data);
+            return coins.map(function (coin) {                
+                let info = Object.entries(coin[1]);     
+                let coinName = info[2][1];
+                let coinPrice = info[4][1];
+                for (var i = 0; i < DOMcoinName.length; i++) {
+                    if (DOMcoinName[i].innerHTML == coinName) {
+                        DOMcoinPrice[i].innerHTML = coinPrice;
+                        DOMcoinValue[i].innerHTML = coinPrice * DOMcoinQuantity[i].innerHTML;
+                    }
+                } 
+            })
+        });
+
+
+</script>
 
 
 
