@@ -23,6 +23,7 @@
                 @Html.ActionLink("My Portfolios", "ViewMyPortfolios", "Portfolio", null, new { @class = "nav-item nav-link" })
                 @Html.ActionLink("My Transactions", "ViewMyTransactions", "Transaction", null, new { @class = "nav-item nav-link" })
                 @Html.ActionLink("Events", "GetEvents", "Events", null, new { @class = "nav-item nav-link" })
+                @Html.ActionLink("New Register", "Index", "MyAccount", null, new { @class = "nav-item nav-link" })
                 @Html.ActionLink("Change role", "ChangeRole", "Events", null, new { @class="nav-item nav-link"})
             </div>
         </div>
@@ -30,11 +31,11 @@
     </nav>
 
     <div id="vw85" class="container-fluid">
-        <div class="jumbotron bg-dark text-white">
+        <div id="fix-me" class="jumbotron bg-dark text-white">
             @RenderBody()
             <hr />
-            <footer>
-                <p>&copy; @DateTime.Now.Year - CryptoFolio</p>
+            <footer>                
+                <p>&copy; @DateTime.Now.Year - CryptoFolio</p>               
             </footer>
         </div>
     </div>
