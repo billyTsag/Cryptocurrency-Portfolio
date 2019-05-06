@@ -19,14 +19,16 @@
     <tbody>
         @foreach (var item in Model)
         {
-        <tr>
-            <td class="coinName">@item.CoinName</td>
-            <td class="coinQuantity">@item.Quantity</td>
-            <td class="coinPrice"></td>
-            <td class="coinValue"></td>
-            
-        </tr>
+            <tr>
+                <td class="coinName">@item.CoinName</td>
+                <td class="coinQuantity">@item.Quantity</td>
+                <td class="coinPrice"></td>
+                <td class="coinValue"></td>
+
+            </tr>
         }
+
+        <button class="btn btn-warning">@Html.ActionLink("Add Transaction", "CreateBuyTransaction", "Transaction", null, new { })</button>
     </tbody>
 </table>
 

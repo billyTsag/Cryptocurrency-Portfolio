@@ -33,12 +33,36 @@ body {
     width:85vw;
 }
 
-#myText{
-    color:black !important;
+
+
+
+
+#fix-me{
+    min-height:85vh;
 }
 
-#billy {
-    background: url('./1.jfif') center;
+/* Index CSS */
+
+#myText {
+    margin-top:2rem;
+}
+
+.style-card-header {
+    background-color: black;
     color: white;
 }
 
+.style-card-body {
+    background: url('./portfolio.jpg') center;
+    background-size: cover;
+    color: white;
+    border-top: 1px solid white;
+    min-height: 20vh;
+    font-size: 1.3rem;
+}
+
+.style-card-footer {
+    background-color: black;
+    color: white;
+    border-top: 1px solid white;
+}

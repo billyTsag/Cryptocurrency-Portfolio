@@ -9,21 +9,19 @@
         {
         <div id="myText" class="col-6">
             <div class="card text-center">
-                <div class="card-header">
-                    @item.PortfolioID
+                <div class="style-card-header card-header">
+                    @Html.ActionLink(item.Name, "ViewMyPortfolio", "Portfolio", new { PortfolioID = item.PortfolioID }, new { @style = "color:white;" }) - ID: @item.PortfolioID
                 </div>
-                <div id="billy" class="card-body">
-                    <h5 class="card-title">@item.Name</h5>
+                <div class="style-card-body card-body">
                     <p class="card-text">Your Free Portfolio</p>
-                    <button>@Html.ActionLink("View", "ViewMyPortfolio", "Portfolio", new { PortfolioID = item.PortfolioID }, new { @class = "nav-item nav-link" })</button>
                 </div>
-                <div class="card-footer text-muted">
+                <div class="style-card-footer card-footer text-muted">
                     @item.DateCreated
                 </div>
-            </div>
-        </div>
-                }            
-     </div>
+            </div>   
+        </div>            
+        }
+    </div>
 </div>
 
 

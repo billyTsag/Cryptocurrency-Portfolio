@@ -17,8 +17,22 @@ namespace CryptoFolio.Controllers
         public ActionResult Index()
         {
             var userId = User.Identity.GetUserId();
+
+            if (_context.Portfolios.Where(x => x.UserID == userId).Count() < 1)
+            {
+                var port = new Portfolio()
+                {
+                    UserID = User.Identity.GetUserId(),
+                    DateCreated = DateTime.Now,
+                    Name = "My Free Portfolio"
+                };
+                _context.Portfolios.Add(port);
+                _context.SaveChanges();
+            }
             var myPortfolios = _context.Portfolios.Where(x => x.UserID == userId).ToList();
             return View(myPortfolios);
-        }               
+        }
+
+        
     }
 }
