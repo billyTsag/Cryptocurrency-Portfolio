@@ -66,3 +66,19 @@ body {
     color: white;
     border-top: 1px solid white;
 }
+
+/*  Homepage */
+
+#main-thing{
+    height:75vh;
+    text-align:center;    
+}
+
+#secondMain-thing{
+    margin-top:10%;
+}
+
+#the-rest{
+    background-color:white;
+    color:black;
+}

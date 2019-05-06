@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace CryptoFolio.Controllers
 {
-    public class MyAccountController : Controller
+    public class PremiumUserController : Controller
     {
-        // GET: MyAccount
+        // GET: PremiumUser
         public ActionResult Index()
         {
             return View();

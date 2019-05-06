@@ -33,6 +33,11 @@ namespace CryptoFolio.Controllers
             return View(myPortfolios);
         }
 
-        
+        public ActionResult HomePage()
+        {
+            return View();
+        }
     }
+
+    
 }
