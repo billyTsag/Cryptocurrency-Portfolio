@@ -177,7 +177,6 @@
     <Compile Include="Controllers\MarketController.cs" />
     <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\PortfolioController.cs" />
-    <Compile Include="Controllers\PremiumUserController.cs" />
     <Compile Include="Controllers\TransactionController.cs" />
     <Compile Include="Controllers\WatchListController.cs" />
     <Compile Include="Global.asax.cs">
