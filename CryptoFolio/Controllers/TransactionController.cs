@@ -54,6 +54,12 @@ namespace CryptoFolio.Controllers
         [HttpPost]
         public ActionResult CreateBuyTransaction(TransactionViewModel transactionViewModel)
         {
+            var userId = User.Identity.GetUserId();
+
+            
+            
+
+
             var tr = new Transaction()
             {
                 Quantity = transactionViewModel.Quantity,
@@ -64,7 +70,7 @@ namespace CryptoFolio.Controllers
 
             _context.Transactions.Add(tr);
 
-            var userId = User.Identity.GetUserId();
+            
 
             var prtc = new PortfolioCoin()
             {
@@ -82,6 +88,21 @@ namespace CryptoFolio.Controllers
         [HttpPost]
         public ActionResult CreateSellTransaction(TransactionViewModel transactionViewModel)
         {
+            var userId = User.Identity.GetUserId();
+
+            var quan =
+                _context.Transactions.Where(x=>x.Buy==true)
+                .Join(_context.PortfolioCoins, t => t.TransactionID, pc => pc.TransactionID, (t, pc) => new { t, pc })
+                .Join(_context.Coins, pc => pc.pc.CoinID, c => c.CoinID, (pc, c) => new { pc, c })
+                .Join(_context.Portfolios, tpc => tpc.pc.pc.PortfolioID, port => port.PortfolioID, (tpc, port) => new { tpc, port })
+                .Where(tpc => tpc.port.UserID == userId && tpc.tpc.c.CoinID == tpc.tpc.pc.pc.CoinID)
+                .Select(tpcport => new TransactionViewModel
+                {
+                    Quantity = tpcport.tpc.pc.t.Quantity,
+                    Buy = tpcport.tpc.pc.t.Buy
+                });
+
+            
             var tr = new Transaction()
             {
                 Quantity = -(transactionViewModel.Quantity),
@@ -91,7 +112,7 @@ namespace CryptoFolio.Controllers
 
             _context.Transactions.Add(tr);
 
-            var userId = User.Identity.GetUserId();
+            
 
             var prtc = new PortfolioCoin()
             {

@@ -17,8 +17,8 @@ namespace CryptoFolio.Controllers
 
         
        
-    // GET: Events
-    public ActionResult GetEvents()
+        // GET: Events
+        public ActionResult GetEvents()
         {
             return View();
         }
@@ -28,11 +28,12 @@ namespace CryptoFolio.Controllers
         {
             var _userManager = new ApplicationUserManager(new UserStore<ApplicationUser>(_context));
             usernameID = User.Identity.GetUserId();
-            
-            _userManager.RemoveFromRole(usernameID, "Freemium");
-           _userManager.AddToRole(usernameID, "Premium");
-            _context.SaveChanges();
-
+            if (User.IsInRole("Freemium"))
+            {
+                _userManager.RemoveFromRole(usernameID, "Freemium");
+                _userManager.AddToRole(usernameID, "Premium");
+                _context.SaveChanges();
+            }
             return RedirectToAction("Index", "Home");
         }
 

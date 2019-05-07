@@ -14,7 +14,8 @@
                 @Html.TextBoxFor(x => x.Name, new { placeholder = "Name of your Portfolio", @class="form-control", style = "margin:0 auto;" })
             </div>
             <td>
-                <button type="submit" class="btn btn-outline-success" style="width:50%; margin-top:10px;">Create</button>
+                <button>@Html.ActionLink("Create","Index","Payment",null, new { @class = "btn btn-outline-success" })</button>
+                @*<button type="submit" class="btn btn-outline-success" style="width:50%; margin-top:10px;">Create</button>*@
             </td>
         }
     </div>
