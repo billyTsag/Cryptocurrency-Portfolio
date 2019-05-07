@@ -177,6 +177,7 @@
     <Compile Include="Controllers\MarketController.cs" />
     <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\PortfolioController.cs" />
+    <Compile Include="Controllers\NewRegistrationController.cs" />
     <Compile Include="Controllers\TransactionController.cs" />
     <Compile Include="Controllers\WatchListController.cs" />
     <Compile Include="Global.asax.cs">
@@ -340,6 +341,10 @@
     <Content Include="Views\Events\GetEvents.cshtml" />
     <Content Include="Views\Events\ChangeRole.cshtml" />
     <Content Include="Views\Payment\Index.cshtml" />
+    <Content Include="Views\Shared\HomePageLayout.cshtml" />
+    <Content Include="Views\Home\HomePage.cshtml" />
+    <Content Include="Views\Index.cshtml" />
+    <Content Include="Views\NewRegistration\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

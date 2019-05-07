@@ -8,8 +8,8 @@
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
-<body  style="background: url('/Content/bla.jpg') center; background-attachment: fixed; 	background-size:cover;">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<body  style="background: url('/Content/bla.jpg') center; background-attachment: fixed; background-size:cover;">
+    <nav id="my-main-nav" class="navbar navbar-expand-lg navbar-dark fixed-top">
         @Html.ActionLink("CryptoFolio", "HomePage", "Home", new { area = "" }, new { @class = "navbar-brand" })
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -17,14 +17,14 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-item nav-link" })
-                @Html.ActionLink("Create Your Portfolio", "CreatePortfolio", "Portfolio", null, new { @class = "nav-item nav-link" })
-                @Html.ActionLink("Create A Transaction", "CreateBuyTransaction", "Transaction", null, new { @class = "nav-item nav-link" })
+                @*@Html.ActionLink("Create Your Portfolio", "CreatePortfolio", "Portfolio", null, new { @class = "nav-item nav-link" })*@
                 @Html.ActionLink("Market", "ViewMarket", "Market", null, new { @class = "nav-item nav-link" })
-                @Html.ActionLink("My Portfolios", "ViewMyPortfolios", "Portfolio", null, new { @class = "nav-item nav-link" })
-                @Html.ActionLink("My Transactions", "ViewMyTransactions", "Transaction", null, new { @class = "nav-item nav-link" })
                 @Html.ActionLink("Events", "GetEvents", "Events", null, new { @class = "nav-item nav-link" })
-                @Html.ActionLink("New Register", "Index", "PremiumUser", null, new { @class = "nav-item nav-link" })
-                @Html.ActionLink("Change role", "ChangeRole", "Events", null, new { @class = "nav-item nav-link" })
+                @Html.ActionLink("Add a Transaction", "CreateBuyTransaction", "Transaction", null, new { @class = "nav-item nav-link" })
+                @*@Html.ActionLink("My Portfolios", "ViewMyPortfolios", "Portfolio", null, new { @class = "nav-item nav-link" })*@
+                @*@Html.ActionLink("My Transactions", "ViewMyTransactions", "Transaction", null, new { @class = "nav-item nav-link" })*@
+                @*@Html.ActionLink("New Register", "Index", "NewRegistration", null, new { @class = "nav-item nav-link" })
+                @Html.ActionLink("Change role", "ChangeRole", "Events", null, new { @class = "nav-item nav-link" })*@
 
             </div>
         </div>
