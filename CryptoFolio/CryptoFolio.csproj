@@ -339,6 +339,7 @@
     <Content Include="Views\Events\GetEvents.cshtml" />
     <Content Include="Views\Events\ChangeRole.cshtml" />
     <Content Include="Views\Payment\Index.cshtml" />
+    <Content Include="Views\Shared\HomePageLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

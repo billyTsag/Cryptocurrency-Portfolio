@@ -33,6 +33,10 @@ body {
     width:85vw;
 }
 
+.vw85{
+    width:85vw;
+}
+
 
 
 
@@ -81,4 +85,12 @@ body {
 #the-rest{
     background-color:white;
     color:black;
+}
+
+#my-main-nav{
+    background-color:transparent;
+}
+
+#my-main-nav:hover {
+    background-color: black;
 }
