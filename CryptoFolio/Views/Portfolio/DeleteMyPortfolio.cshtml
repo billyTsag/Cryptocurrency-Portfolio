@@ -9,5 +9,7 @@
 @using (Html.BeginForm())
 {
     <button type="submit" class="btn btn-outline-success">Delete</button>
+    @Html.ActionLink("Cancel", "ViewMyPortfolios", "Portfolio", new { @class = "btn btn-outline-danger" })
 }
+
 

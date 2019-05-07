@@ -50,7 +50,7 @@
                 for (var i = 0; i < DOMcoinName.length; i++) {
                     if (DOMcoinName[i].innerHTML == coinName) {
                         DOMcoinPrice[i].innerHTML = coinPrice;
-                        DOMcoinValue[i].innerHTML = coinPrice * DOMcoinQuantity[i].innerHTML;
+                        DOMcoinValue[i].innerHTML = coinPrice * parseInt(DOMcoinQuantity[i].innerHTML);
                     }
                 } 
             })
