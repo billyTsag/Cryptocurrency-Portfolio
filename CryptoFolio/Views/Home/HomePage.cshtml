@@ -1,13 +1,15 @@
-﻿@{
+﻿
+@{
     ViewBag.Title = "HomePage";
     Layout = "~/Views/Shared/HomePageLayout.cshtml";
 }
+
 <div id="main-thing">
     <div id="secondMain-thing" class="cover-container d-flex h-100 p-3 mx-auto flex-column text-center" style="color:white;">
-        <main role="main" class="inner cover">
-            <h1 class="cover-heading">Cryptofolio</h1>
-            <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-            <p class="lead">
+        <main role="main" class="inner cover col-5" style="margin: 0 auto; line-height:3rem;">
+            <h1 class="cover-heading" style="font-size:4rem; margin-bottom: 3rem;">Cryptofolio</h1>
+            <p class="lead" style="font-size:1.3rem;">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+            <p class="lead" style="margin-top: 3rem;">
                 <a href="#vw85" class="btn btn-lg btn-secondary">Learn more</a>
             </p>
         </main>
@@ -76,7 +78,7 @@
         <h1 class="display-4">Join Us!</h1>
         <p class="lead">We are launching our mobile application soon, in the meantime you can use our web app.</p>
         <hr class="my-4">
-        <a class="btn btn-primary btn-lg" href="#" role="button">Get Started</a>
+        @Html.ActionLink("Get Started!", "Index", "NewRegistration", null, new { @class= "btn btn-primary btn-lg", role = "button" })
     </div>
 </div>
 
