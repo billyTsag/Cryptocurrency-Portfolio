@@ -38,7 +38,8 @@ namespace CryptoFolio.Controllers
                 _context.Portfolios.Add(port);
                 _context.SaveChanges();
                 return RedirectToAction("Index", "Home");
-            }return View("BecomePremium", "MyAccount");
+
+            }return View("BecomePremium", "AccountUser");
         }
 
        

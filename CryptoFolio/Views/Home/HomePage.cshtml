@@ -3,17 +3,82 @@
     ViewBag.Title = "HomePage";
     Layout = "~/Views/Shared/HomePageLayout.cshtml";
 }
+
 <div id="main-thing">
-    <div id="secondMain-thing" lass="cover-container d-flex h-100 p-3 mx-auto flex-column text-center" style="color:white;">
-        <main role="main" class="inner cover">
-            <h1 class="cover-heading">Cover your page.</h1>
-            <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-            <p class="lead">
-                <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
+    <div id="secondMain-thing" class="cover-container d-flex h-100 p-3 mx-auto flex-column text-center" style="color:white;">
+        <main role="main" class="inner cover col-5" style="margin: 0 auto; line-height:3rem;">
+            <h1 class="cover-heading" style="font-size:4rem; margin-bottom: 3rem;">Cryptofolio</h1>
+            <p class="lead" style="font-size:1.3rem;">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+            <p class="lead" style="margin-top: 3rem;">
+                <a href="#vw85" class="btn btn-lg btn-secondary">Learn more</a>
             </p>
         </main>
     </div>
 </div>
 
 
+<div class="container-fluid" style="background-color:white;">
+    <div id="vw85" style="padding-top:2rem; margin:0 auto;">
+        <h1 style="text-align:center;margin:2rem;">How it works!</h1>
+        <div style="height: 0.3vh; background: black;">
+
+        </div>
+        <div class="row" style="margin:100px;">
+            <div class="col-5" style="text-align:center; margin-top:2rem; font-size:1.1rem;">
+                <h3>Track and manage your assets!</h3>
+                <p>
+                    As a cryptocurrency investor, you need a cryptocurrency portfolio tracker. If you don’t use a one, then you essentially only have two alternatives.
+                </p>
+                <p>
+                    The first one is to keep track of your investments on a spreadsheet that you update manually all the time, and the second one is to not keep track of your investments at all.
+                </p>
+                <p>Obviously, both alternatives are not idea, which is why a portfolio is crucial in the fast-moving cryptocurrency world.</p>
+            </div>
+            <div class="col-2"></div>
+            <div class="col-5" style="text-align:center; margin-top:2rem;">
+                <img src="https://cdn.images.express.co.uk/img/dynamic/22/590x/China-803313.jpg" style="height:350px; width:550px;" />
+            </div>
+        </div>
+
+        <div style="height: 0.3vh; background: black;">
+
+        </div>
+
+        <div class="row" style="margin:100px;">
+            <div class="col-5" style="text-align:center; margin-top:2rem;">
+                <img src="https://cdn.images.express.co.uk/img/dynamic/22/590x/China-803313.jpg" style="height:350px; width:550px;" />
+            </div>
+            <div class="col-1"></div>
+            <div class="col-6" style="text-align:center; margin-top:2rem; font-size:1.1rem;">
+                <h3>Follow the market live!</h3>
+                <p>The website has an interactive cryptocurrency infographic created to display current data on the cryptocurrency market, indicating the cryptocurrencies market capitalization, and live prices</p>
+                <p>The tracker which allows users to check the token or cryptocurrency price movement, follow the size of market cap and get a summary of the currency’s transaction volume.</p>
+            </div>
+        </div>
+
+        <div style="height: 0.3vh; background: black;">
+
+        </div>
+
+        <div class="row" style="margin:100px; padding-bottom: 6rem;">
+            <div class="col-6" style="text-align:center; margin-top:2rem; font-size:1.1rem;">
+                <h3>Keep up with Cryptocurrency events!</h3>
+                <p>The crypto event calendar on this website provides the ideal way to keep track of blockchain and crypto events. In each instance the date, name of the event, location and a link to the event website are provided for easy reference. </p>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-5" style="text-align:center; margin-top:2rem;">
+                <img src="https://cdn.images.express.co.uk/img/dynamic/22/590x/China-803313.jpg" style="height:350px; width:550px;" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="jumbotron" style="text-align:center;">
+        <h1 class="display-4">Join Us!</h1>
+        <p class="lead">We are launching our mobile application soon, in the meantime you can use our web app.</p>
+        <hr class="my-4">
+        @Html.ActionLink("Get Started!", "Index", "NewRegistration", null, new { @class= "btn btn-primary btn-lg", role = "button" })
+    </div>
+</div>
 
