@@ -8,7 +8,7 @@
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
-<body style="background: url('/Content/bla.jpg') center; background-attachment: fixed; background-size:cover;">
+<body  style="background: url('/Content/bla.jpg') center; background-attachment: fixed; background-size:cover;">
     <nav id="my-main-nav" class="navbar navbar-expand-lg navbar-dark fixed-top">
         @Html.ActionLink("CryptoFolio", "HomePage", "Home", new { area = "" }, new { @class = "navbar-brand" })
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,8 +24,7 @@
                 @*@Html.ActionLink("My Portfolios", "ViewMyPortfolios", "Portfolio", null, new { @class = "nav-item nav-link" })*@
                 @*@Html.ActionLink("My Transactions", "ViewMyTransactions", "Transaction", null, new { @class = "nav-item nav-link" })*@
                 @*@Html.ActionLink("New Register", "Index", "NewRegistration", null, new { @class = "nav-item nav-link" })
-        @Html.ActionLink("Change role", "ChangeRole", "Events", null, new { @class = "nav-item nav-link" })*@
-                
+                @Html.ActionLink("Change role", "ChangeRole", "Events", null, new { @class = "nav-item nav-link" })*@
 
             </div>
         </div>
@@ -33,18 +32,15 @@
     </nav>
 
     <div id="vw85" class="container-fluid">
-        <div id="fix-me" class="jumbotron bg-dark text-white">
+        <div id="fix-me" class="jumbotron text-white" style="background-color:transparent;">
             @RenderBody()
             <hr />
-            <footer>
-                <p>&copy; @DateTime.Now.Year - CryptoFolio</p>
-            </footer>
+           
         </div>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
-   
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
 </body>
 </html>
