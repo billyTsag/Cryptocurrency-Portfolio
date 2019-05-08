@@ -18,6 +18,7 @@
             <th scope="col"><a href="javascript:SortTable(4,'N');">Total Volume</a></th>
             <th scope="col"><a href="javascript:SortTable(5,'N');">Circulating Supply</a></th>
             <th scope="col"><a href="javascript:SortTable(6,'N');">Price Change %</a></th>
+            <th><a href="#">Watch</a></th>
         </tr>
     </thead>
     <tbody id="coins"></tbody>
@@ -64,6 +65,10 @@
                 let td7 = createNode('td');
                 let button = createNode('button');
 
+                button.classList.add('btn');
+                button.classList.add('btn-sm');
+                button.classList.add('btn-danger');
+
                 td1.innerHTML = `${coinMarketCapNumber}`;
                 td2.innerHTML = `<img src="${coinImage}" height=25> ${coinName}`;
                 td3.innerHTML = `$${coinPrice}`;
@@ -71,6 +76,8 @@
                 td5.innerHTML = `$${coinTotalVolume}`;
                 td6.innerHTML = `${coinCirculatingSupply}`;
                 td7.innerHTML = `${coinPriceChangePercentage}%`;
+                button.innerHTML = "Watch"
+                
 
 
                 if (coinPriceChangePercentage > 0) {
@@ -87,6 +94,7 @@
                 append(tr, td5);
                 append(tr, td6);
                 append(tr, td7);
+                append(tr, button);
                 append(tbody, tr);
             })
         });
