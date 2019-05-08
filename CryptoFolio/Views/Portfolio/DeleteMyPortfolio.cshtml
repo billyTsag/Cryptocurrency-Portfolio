@@ -3,13 +3,18 @@
     ViewBag.Title = "DeleteMyPortfolio";
 }
 
-<h2>Delete My Portfolio</h2>
 
-<h3> Are you sure you want to delete @Model.Name?</h3>
-@using (Html.BeginForm())
-{
-    <button type="submit" class="btn btn-outline-success">Delete</button>
-    @Html.ActionLink("Cancel", "ViewMyPortfolios", "Portfolio", new { @class = "btn btn-outline-danger" })
-}
-
-
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4" style="text-align:center; border:5px solid white; padding:30px; border-radius:20px; background-color:black;">
+            <h2>Delete My Portfolio</h2>
+            <hr style="background-color: white;" />
+            <h3> Are you sure you want to delete @Model.Name?</h3>
+            @using (Html.BeginForm())
+            {
+                <button type="submit" class="btn btn-outline-success">Delete</button>
+                @Html.ActionLink("Cancel", "ViewMyPortfolios", "Portfolio", new { @class = "btn btn-outline-danger", style = "margin:0 auto;" })
+            }          
+        </div>
+        <div class="col-4"></div>
+    </div>

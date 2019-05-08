@@ -1,6 +1,9 @@
-﻿body {
+﻿@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
+    font-family: 'Montserrat', Arial;
 }
 
 /* Set padding to keep content from hitting the edges */

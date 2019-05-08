@@ -3,14 +3,21 @@
     ViewBag.Title = "EditMyPortfolio";
 }
 
-<h2>Edit My Portfolio</h2>
-<hr />
-@using (Html.BeginForm()){
-    
-    <div class="form-group">
-        @Html.LabelFor(x => x.Name, "Name")
-        @Html.TextBoxFor(x => x.Name, new { placeholder = Model.Name })
-    </div>
-    <button type="submit" class="btn btn-outline-success">Update</button>
-}
 
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4" style="text-align:center; border:5px solid white; padding:30px; border-radius:20px; background-color:black;">
+        <h2>Edit My Portfolio</h2>
+        <hr style="background-color: white;" />
+        @using (Html.BeginForm())
+        {
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.Name, "Name")
+                @Html.TextBoxFor(x => x.Name, new { placeholder = Model.Name, @class = "form-control", style = "margin:0 auto;" })
+            </div>
+            <button type="submit" class="btn btn-outline-success">Update</button>
+        }
+    </div>
+    <div class="col-4"></div>
+</div>
