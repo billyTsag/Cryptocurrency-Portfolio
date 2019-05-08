@@ -1,3 +1,3 @@
 # CryptocurrencyPortfolio
-## Check the tab 'Projects'
+## Coming Soon
 
