@@ -21,16 +21,16 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                @Html.ActionLink("Homeeee", "Index", "Home", null, new { @class = "nav-item nav-link" })
-                @Html.ActionLink("Create Your Portfolio", "CreatePortfolio", "Portfolio", null, new { @class = "nav-item nav-link" })
-                @Html.ActionLink("Create A Transaction", "CreateBuyTransaction", "Transaction", null, new { @class = "nav-item nav-link" })
+                @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-item nav-link" })
+                @*@Html.ActionLink("Create Your Portfolio", "CreatePortfolio", "Portfolio", null, new { @class = "nav-item nav-link" })*@
                 @Html.ActionLink("Market", "ViewMarket", "Market", null, new { @class = "nav-item nav-link" })
-                @Html.ActionLink("My Portfolios", "ViewMyPortfolios", "Portfolio", null, new { @class = "nav-item nav-link" })
-                @Html.ActionLink("My Transactions", "ViewMyTransactions", "Transaction", null, new { @class = "nav-item nav-link" })
                 @Html.ActionLink("Events", "GetEvents", "Events", null, new { @class = "nav-item nav-link" })
-                @Html.ActionLink("New Register", "Index", "NewRegistration", null, new { @class = "nav-item nav-link" })
-                @Html.ActionLink("Change role", "ChangeRole", "Events", null, new { @class = "nav-item nav-link" })
-                @Html.ActionLink("Payment", "Index", "Payment", null, new { @class = "nav-item nav-link" })                
+                @Html.ActionLink("Add a Transaction", "CreateBuyTransaction", "Transaction", null, new { @class = "nav-item nav-link" })
+                @Html.ActionLink("Chat", "Index", "Chat", null, new { @class = "nav-item nav-link", @target = "_blank" })
+                @*@Html.ActionLink("My Portfolios", "ViewMyPortfolios", "Portfolio", null, new { @class = "nav-item nav-link" })*@
+                @*@Html.ActionLink("My Transactions", "ViewMyTransactions", "Transaction", null, new { @class = "nav-item nav-link" })*@
+                @*@Html.ActionLink("New Register", "Index", "NewRegistration", null, new { @class = "nav-item nav-link" })
+        @Html.ActionLink("Change role", "ChangeRole", "Events", null, new { @class = "nav-item nav-link" })*@
             </div>
         </div>
         @Html.Partial("_LoginPartial")

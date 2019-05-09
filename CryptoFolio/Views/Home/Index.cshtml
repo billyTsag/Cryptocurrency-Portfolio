@@ -4,7 +4,7 @@
 }
 <div class="container">
     <div class="row">
-        
+
         @foreach (var item in Model)
         {
             <div id="myText" class="col-6">
@@ -16,6 +16,22 @@
                     </div>
                     <div class="style-card-footer card-footer text-muted">
                         @item.DateCreated
+                    </div>
+                </div>
+            </div>
+        }
+
+        @if (User.IsInRole("Freemium"))
+        {
+            <div id="myText" class="col-6">
+                <div class="card text-center">
+                    <div class="style-card-header card-header">
+                        @Html.ActionLink("Become Premium", "Index", "Payment", null, new { @style = "color:red;" })
+                    </div>
+                    <div class="style-card-body-2 card-body">
+                    </div>
+                    <div class="style-card-footer card-footer text-muted">
+                        Unlimited Portfolios
                     </div>
                 </div>
             </div>

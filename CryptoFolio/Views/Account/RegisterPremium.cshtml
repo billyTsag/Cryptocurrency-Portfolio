@@ -1,0 +1,96 @@
+﻿@model CryptoFolio.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register Pro";
+}
+
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6" style="text-align:center; border:5px solid white; padding:30px; border-radius:20px; background-color:black;">
+        @using (Html.BeginForm("RegisterPremium", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            <h2 style="text-align:center;">@ViewBag.Title.</h2>
+
+            <h4>Create a new account.</h4>
+            <hr />
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(m => m.Email, new { })
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", style = "margin:0 auto;" })
+                </div>
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(m => m.UserName, new { })
+                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", style = "margin:0 auto;" })
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(m => m.Password, new { })
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", style = "margin:0 auto;" })
+                </div>
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(m => m.ConfirmPassword, new { })
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", style = "margin:0 auto;" })
+                </div>
+            </div>
+            <hr style="background-color:white;" />
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>Card No.</label>
+                    <input type="text" class="form-control" style="margin:0 auto;" />
+                </div>
+                <div class="form-group col-md-2">
+                    <label>Month</label>
+                    <select class="form-control" style="margin:0 auto;">
+                        <option value="Jan">01</option>
+                        <option value="Feb">02</option>
+                        <option value="Mar">03</option>
+                        <option value="Apr">04</option>
+                        <option value="May">05</option>
+                        <option value="Jun">06</option>
+                        <option value="Jul">07</option>
+                        <option value="Aug">08</option>
+                        <option value="Sep">09</option>
+                        <option value="Oct">10</option>
+                        <option value="Nov">11</option>
+                        <option value="Dec">12</option>
+                    </select>
+                </div>
+                <div class="form-group cold-md-2">
+                    <label>Year</label>
+                    <select class="form-control" style="margin:0 auto;">
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-2">
+                    <label>CCV</label>
+                    <input class="form-control" type="text" pattern="[\d]{3}" maxlength="3" required style="margin:0 auto;">
+                </div>
+            </div>
+            <div id="paypal">
+
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-success" value="Register" />
+            </div>
+        }
+    </div>
+    <div class="col-3"></div>
+</div>
+
+<script src="https://www.paypal.com/sdk/js?client-id=sb"></script>
+<script>paypal.Buttons().render('body');</script>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+
+}

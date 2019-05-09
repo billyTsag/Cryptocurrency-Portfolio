@@ -68,6 +68,15 @@ body {
     font-size: 1.3rem;
 }
 
+.style-card-body-2 {
+    background: url('./premiumuserlock.jpg') center;
+    background-size: cover;
+    color: white;
+    border-top: 1px solid white;
+    min-height: 20vh;
+    font-size: 1.3rem;
+}
+
 .style-card-footer {
     background-color: black;
     color: white;

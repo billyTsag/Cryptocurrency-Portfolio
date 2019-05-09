@@ -6,13 +6,10 @@
     <div class="col-4"></div>
     <div class="col-4" style="text-align:center; border:5px solid white; padding:30px; border-radius:20px; background-color:black;">
         <h2>Payment</h2>
+        <h3>5$</h3>
         <hr style="background-color: white;" />
 
-        <div class="form-group">
-            <div class="form-group">
-                @Html.LabelFor(x => x.Price, "$10.00")
-                @Html.TextBoxFor(x => x.Price, new { placeholder = "$10.00", @class = "form-control", style = "margin:0 auto;" })
-            </div>
+        <div class="form-group">            
             <div class="form-group">
                 @Html.LabelFor(x => x.CardNumber, "Card No")
                 @Html.TextBoxFor(x => x.CardNumber, new { placeholder = "Card No", @class = "form-control", style = "margin:0 auto;" })
@@ -51,12 +48,17 @@
                     <label>CCV</label>
                     <input class="form-control" type="text" pattern="[\d]{3}" maxlength="3" required style="margin:0 auto;">
                 </div>
+                <div id="paypal">
 
+                </div>
                 <div class="form-group">
-                    <button class="btn btn-success" style="margin-top:1rem;"> @Html.ActionLink("Become PRO User", "ChangeRole", "Events", new { @style="color:white;"}) </button>
+                    <button class="btn btn-success" style="margin-top:1rem;"> @Html.ActionLink("Become PRO User", "ChangeRole", "Events",null, new { @style = "color:white;" }) </button>
                 </div>
 
             </div>
+        </div>
+        <div class="col-4"></div>
     </div>
-    <div class="col-4"></div>
-</div>
+
+    <script src="https://www.paypal.com/sdk/js?client-id=sb"></script>
+    <script>paypal.Buttons().render('#paypal');</script>

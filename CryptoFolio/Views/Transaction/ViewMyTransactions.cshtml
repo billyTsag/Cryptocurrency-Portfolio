@@ -21,26 +21,29 @@
             <th scope="col"><a href="javascript:SortTable(3,'N');">Quantity</a></th>
             <th scope="col"><a href="javascript:SortTable(4,'D','mdy');">Date Purchased</a></th>
             <th scope="col"><a href="javascript:SortTable(5,'T');">Buy/Sell</a></th>
+            <th scope="col"><a href="">Delete</a></th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model.Bla)
         {
-            <tr>
-                <td>@item.TransactionID</td>                
-                <td>@item.CoinName</td>
-                <td>@item.PortfolioName</td>                
-                <td>@Math.Abs(item.Quantity)</td>
-                <td>@item.DateOfPurchase</td>
-                @if (item.Buy)
-                {
-                    <td style="color:green;">Buy</td>
-                }
-                else
-                {
-                    <td style="color:red;">Sell</td>
-                }
-            </tr>
+        <tr>
+            <td>@item.TransactionID</td>
+            <td>@item.CoinName</td>
+            <td>@item.PortfolioName</td>
+            <td>@Math.Abs(item.Quantity)</td>
+            <td>@item.DateOfPurchase</td>
+
+            @if (item.Buy)
+            {
+                <td style="color:green;">Buy</td>
+            }
+            else
+            {
+                <td style="color:red;">Sell</td>
+            }
+            <td><button class="btn btn-sm btn-secondary">@Html.ActionLink("Delete", "DeleteTransaction", "Transaction", new { TransactionID = item.TransactionID }, new { @class = "nav-item nav-link text-info" })</button></td>
+        </tr>
         }
     </tbody>
 </table>

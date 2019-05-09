@@ -7,14 +7,14 @@
     <div class="col-4" style="text-align:center; border:5px solid white; padding:30px; border-radius:20px; background-color:black;">
         <h2>Create Portfolio</h2>
         <hr style="background-color: white;"/>
-        @using (Html.BeginForm("CreatePortfolio", "Portfolio"))
+        @using (Html.BeginForm("CreatePortfolio", "Portfolio", FormMethod.Post))
         {
             <div class="form-group">
                 @Html.LabelFor(x => x.Name, "Name")
                 @Html.TextBoxFor(x => x.Name, new { placeholder = "Name of your Portfolio", @class="form-control", style = "margin:0 auto;" })
             </div>
             <td>
-                <button class="btn btn-outline-success" style="width:50%; margin-top:10px;">@Html.ActionLink("Create","Index","Payment",null, new { @style="color:white;"})</button>
+                <button class="btn btn-outline-success" style="width:50%; margin-top:10px;" type="submit">Create</button>
                 @*<button type="submit" class="btn btn-outline-success" style="width:50%; margin-top:10px;">Create</button>*@
             </td>
         }

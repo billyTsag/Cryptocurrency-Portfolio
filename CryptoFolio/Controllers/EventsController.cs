@@ -33,6 +33,7 @@ namespace CryptoFolio.Controllers
                 _userManager.RemoveFromRole(usernameID, "Freemium");
                 _userManager.AddToRole(usernameID, "Premium");
                 _context.SaveChanges();
+                return RedirectToAction("Index", "Home");
             }
             return RedirectToAction("Index", "Home");
         }

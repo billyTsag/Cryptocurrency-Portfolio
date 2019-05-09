@@ -4,7 +4,7 @@
 }
 
 
-<table class="table table-striped table-hover table-dark">
+<table class="table table-striped table-hover table-dark" style="border: 1px solid white;">
     <thead>
         <tr>
             <th scope="col">#</th>
@@ -19,13 +19,13 @@
             <th scope="row">@item.PortfolioID</th>
             <td>@item.Name</td>
             <td>@item.DateCreated</td>
-            <td><button>@Html.ActionLink("View Transactions", "ViewMyTransactions", "Transaction", new { PortfolioID = item.PortfolioID}, new { @class = "nav-item nav-link" })</button></td>
-            <td><button>@Html.ActionLink("Edit", "EditMyPortfolio", "Portfolio", new { PortfolioID = item.PortfolioID }, new { @class = "nav-item nav-link"})</button></td>
-            <td><button>@Html.ActionLink("Delete", "DeleteMyPortfolio", "Portfolio", new { PortfolioID = item.PortfolioID }, new { @class = "nav-item nav-link"})</button></td>
+            <td><button class="btn btn-sm btn-secondary">@Html.ActionLink("View Transactions", "ViewMyTransactions", "Transaction", new { PortfolioID = item.PortfolioID}, new { @class = "nav-item nav-link", @style="color:white;"})</button></td>
+            <td><button class="btn btn-sm btn-secondary">@Html.ActionLink("Edit", "EditMyPortfolio", "Portfolio", new { PortfolioID = item.PortfolioID }, new { @class = "nav-item nav-link", @style = "color:white;" })</button></td>
+            <td><button class="btn btn-sm btn-secondary">@Html.ActionLink("Delete", "DeleteMyPortfolio", "Portfolio", new { PortfolioID = item.PortfolioID }, new { @class = "nav-item nav-link", @style = "color:white;" })</button></td>
         </tr>
         }
     </tbody>
 </table>
 
-<button>@Html.ActionLink("Create New Portfolio", "CreatePortfolio", "Portfolio", null, new { @class = "nav-item nav-link" })</button>
+<button class="btn btn-sm btn-secondary">@Html.ActionLink("Create New Portfolio", "CreatePortfolio", "Portfolio", null, new { @class = "nav-item nav-link" , @style="color:white;" })</button>
 

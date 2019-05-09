@@ -143,6 +143,12 @@ namespace CryptoFolio.Controllers
             return View();
         }
 
+        [AllowAnonymous]
+        public ActionResult RegisterPremium()
+        {
+            return View();
+        }
+
         //
         // POST: /Account/Register
         [HttpPost]
@@ -168,6 +174,32 @@ namespace CryptoFolio.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
                     
+                    return RedirectToAction("Index", "Home");
+                }
+                AddErrors(result);
+            }
+
+            // If we got this far, something failed, redisplay form
+            return View(model);
+        }
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> RegisterPremium(RegisterViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email };
+                var result = await UserManager.CreateAsync(user, model.Password);
+                if (result.Succeeded)
+                {
+
+                    UserManager.AddToRole(user.Id, "Premium");
+
+
+                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+
+                   
                     return RedirectToAction("Index", "Home");
                 }
                 AddErrors(result);

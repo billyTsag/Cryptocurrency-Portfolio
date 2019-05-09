@@ -20,9 +20,7 @@ namespace CryptoFolio.Controllers
             return View();
         }
 
-
-
-        [Authorize(Roles = "Premium")]
+        [Authorize]
         [HttpPost]
         public ActionResult CreatePortfolio(Portfolio portfolio)
         {
@@ -42,10 +40,6 @@ namespace CryptoFolio.Controllers
             }return View("BecomePremium", "AccountUser");
         }
 
-       
-
-       
-
         [Authorize]
         [HttpGet]
         public ActionResult ViewMyPortfolios(string sortOrder)
@@ -55,7 +49,6 @@ namespace CryptoFolio.Controllers
             ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
             var userId = User.Identity.GetUserId();
             var Ports = _context.Portfolios.Where(x => x.UserID == userId);
-
 
             switch (sortOrder)
             {
@@ -74,7 +67,6 @@ namespace CryptoFolio.Controllers
             }
             return View(Ports.ToList());
         }
-        
 
         [Authorize]
         [HttpGet]
@@ -143,13 +135,8 @@ namespace CryptoFolio.Controllers
                 CoinPrice = i.First().CoinPrice
             });
 
-
-
             return View(result);
         }
-
-       
-
 
     }
 

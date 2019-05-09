@@ -35,6 +35,24 @@ namespace CryptoFolio.Controllers
 
         [Authorize]
         [HttpGet]
+        public ActionResult DeleteTransaction(int TransactionID)
+        {
+            var MyTransaction = _context.Transactions.Find(TransactionID);
+            return View(MyTransaction);
+        }
+
+        [Authorize]
+        [HttpPost]
+        public ActionResult DeleteTransaction(Transaction transaction)
+        {
+            var myTransaction = _context.Transactions.Find(transaction.TransactionID);
+            _context.Transactions.Remove(myTransaction);
+            _context.SaveChanges();
+            return RedirectToAction("ViewMyTransactions", "Transaction");
+        }
+
+        [Authorize]
+        [HttpGet]
         public ActionResult CreateSellTransaction()
         {
             var coins = _context.Coins.ToList();
