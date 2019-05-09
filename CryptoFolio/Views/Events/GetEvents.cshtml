@@ -38,9 +38,10 @@
                     let eventStartDate = moreInfo[4][1];
                     let eventEndDate = moreInfo[5][1];
                     let eventScreenshot = moreInfo[12][1];
+                    let eventWebsite = moreInfo[6][1];
 
-                    console.log(eventType);
-                    console.log(eventScreenshot);
+                   
+
 
                     let divCard = createNode('div');
                     let img = createNode('img');
@@ -49,6 +50,7 @@
                     let p1 = createNode('p');
                     let p2 = createNode('p');
                     let small = createNode('small');
+                    let a = createNode('a');
 
                     divCardBody.classList.add('card-body');
                     divCard.classList.add('card');
@@ -59,6 +61,11 @@
                     p2.classList.add('card-text');
                     small.classList.add('text-muted');
 
+                    a.setAttribute("href", `${eventWebsite}`);
+                    a.innerHTML = "Website";
+                    a.setAttribute("style", 'display:block;');
+                    a.setAttribute("target", '_blank');
+
                     h5.innerHTML = `${eventType} <hr> ${eventTitle} <hr> ${eventOrganiser} `;
                     p1.innerHTML = `${eventDescription}`;
                     small.innerHTML = `Start Date: ${eventStartDate} - End Date: ${eventEndDate}`;
@@ -67,6 +74,7 @@
                     divCardBody.style.backgroundColor = "#E8E8E8";
                     img.style.height = "300px";
 
+                    append(p2, a);
                     append(p2, small);
                     append(divCardBody, h5);
                     append(divCardBody, p1);

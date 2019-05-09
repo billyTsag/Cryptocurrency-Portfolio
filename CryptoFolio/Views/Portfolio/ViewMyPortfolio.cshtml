@@ -50,14 +50,14 @@
                 for (var i = 0; i < DOMcoinName.length; i++) {
                     if (DOMcoinName[i].innerHTML == coinName) {
                         let coinQuantity = parseFloat(DOMcoinQuantity[i].innerHTML);
-                        DOMcoinPrice[i].innerHTML = coinPrice;
-                        DOMcoinValue[i].innerHTML = coinPrice * parseInt(DOMcoinQuantity[i].innerHTML);
-                        DOMcoinValue[i].innerHTML = coinPrice * coinQuantity;
+                        DOMcoinPrice[i].innerHTML = "$ "+coinPrice.toFixed(2) ;
+                        DOMcoinValue[i].innerHTML = (coinPrice * parseInt(DOMcoinQuantity[i].innerHTML)).toFixed(2);
+                        DOMcoinValue[i].innerHTML = "$ "+(coinPrice * coinQuantity).toFixed(2) ;
                         totalValue += coinPrice * coinQuantity;
                     }
                 }
 
-                document.getElementById('total-value').innerHTML = totalValue;
+                document.getElementById('total-value').innerHTML = "$ "+ totalValue.toFixed(2) ;
 
             })
         });

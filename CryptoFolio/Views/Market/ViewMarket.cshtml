@@ -65,11 +65,11 @@
 
                 td1.innerHTML = `${coinMarketCapNumber}`;
                 td2.innerHTML = `<img src="${coinImage}" height=25> ${coinName}`;
-                td3.innerHTML = `$${coinPrice}`;
+                td3.innerHTML = `$${coinPrice.toFixed(3)}`;
                 td4.innerHTML = `$${coinMarketCap}`;
                 td5.innerHTML = `$${coinTotalVolume}`;
                 td6.innerHTML = `${coinCirculatingSupply}`;
-                td7.innerHTML = `${coinPriceChangePercentage}%`;
+                td7.innerHTML = `${coinPriceChangePercentage.toFixed(2)}%`;
                 
 
 
